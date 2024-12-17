@@ -47,7 +47,7 @@
                     <div class="dashboard__card__inner mt-4">
                         <div class="form__input">
                             <form action="#" id="countryform">
-                                @csrf
+                                
                                 <div class="form__input__single">
                                     <label for="country" class="form__input__single__label">Country Name</label>
                                     <input type="text" name="name" id="country" class="form__control radius-5"
@@ -78,7 +78,7 @@
                     <div class="dashboard__card__inner mt-4">
                         <div class="form__input">
                             <form action="#" id="editcountryform">
-                                @csrf
+                                
                                 <div class="form__input__single">
                                     <label for="edit_country" class="form__input__single__label">Edit Country Name</label>
                                     <input type="text" name="name" id="edit_country" class="form__control radius-5"
@@ -102,6 +102,12 @@
 @push('js')
     <script>
         $(document).ready(function() {
+            // csrf token setup 
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
             // add data 
             $('#countryform').submit(function(event) {
                 event.preventDefault();

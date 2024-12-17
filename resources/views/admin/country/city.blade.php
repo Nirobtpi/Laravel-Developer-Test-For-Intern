@@ -147,6 +147,7 @@
 @push('js')
     <script>
         $(document).ready(function() {
+            // csrf token setup 
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -208,8 +209,6 @@
             //         $('#state').append('<option value="">-- Select State --</option>');
             //     }
             // })
-
-
 
             // city add form ajax
             $('#cityform').submit(function(event) {

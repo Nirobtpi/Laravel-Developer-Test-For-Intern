@@ -48,7 +48,7 @@
                     <div class="dashboard__card__inner mt-4">
                         <div class="form__input">
                             <form action="#" id="stateform">
-                                @csrf
+                                
                                 <div class="form__input__single">
                                     <select class="form__control radius-5" name='country_id' id="allCountry"
                                         aria-label="Default select example">
@@ -85,7 +85,7 @@
                     <div class="dashboard__card__inner mt-4">
                         <div class="form__input">
                             <form action="#" id="editstateform">
-                                @csrf
+                                
                                 <div class="form__input__single">
                                     <select class="form__control radius-5" name='country_id' id="editcountry"
                                         aria-label="Default select example">
@@ -115,6 +115,12 @@
 @push('js')
     <script>
         $(document).ready(function() {
+            // csrf token setup 
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
             // fetch all country data 
             function fetchAllCountries() {
