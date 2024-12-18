@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     abort(404);
 // });
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('admin.country.index');
 });
 // index page link 
