@@ -73,7 +73,7 @@
                                         <span class="icon_title">Dashboard</span></a>
                                     <ul class="submenu">
                                         <li class="dashboard__bottom__list__item selected">
-                                            <a href="{{ url('/dashboard') }}">Default</a>
+                                            <a href="{{ url('/') }}">Default</a>
                                         </li>
                                     </ul>
                                 </li>
